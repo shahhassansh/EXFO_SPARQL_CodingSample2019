@@ -1,0 +1,265 @@
+## Query 1
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+
+PREFIX dbpedia: <http://dbpedia.org/resource/> 
+
+PREFIX dbpedia-owl: <http://dbpedia.org/ontology/> 
+
+PREFIX yago: <http://dbpedia.org/class/yago/> 
+
+SELECT * 
+
+WHERE { 
+
+?Vehicle rdf:type dbpedia-owl:Automobile . 
+
+?Vehicle dbpedia-owl:layout dbpedia:Four-wheel_drive . 
+
+?Vehicle dbpedia-owl:class dbpedia:Sports_car . 
+
+} 
+
+## Query 2
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+
+PREFIX dbpedia: <http://dbpedia.org/resource/> 
+
+PREFIX dbpedia-owl: <http://dbpedia.org/ontology/> 
+
+PREFIX yago: <http://dbpedia.org/class/yago/> 
+
+SELECT * 
+
+WHERE { 
+
+?Vehicle rdf:type dbpedia-owl:Automobile . 
+
+?Vehicle dbpedia-owl:class dbpedia:Sports_car . 
+
+} 
+
+## Query 3
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+
+PREFIX dbpedia: <http://dbpedia.org/resource/> 
+
+PREFIX dbpedia-owl: <http://dbpedia.org/ontology/> 
+
+PREFIX yago: <http://dbpedia.org/class/yago/> 
+
+SELECT * 
+
+WHERE { 
+
+?Vehicle rdf:type dbpedia-owl:Automobile . 
+
+?Vehicle dbpedia-owl:class dbpedia:Sports_car . 
+
+?Vehicle dbpedia-owl:manufacturer dbpedia:Audi . 
+
+} 
+
+## Query 4
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+
+PREFIX dbpedia: <http://dbpedia.org/resource/> 
+
+PREFIX dbpedia-owl: <http://dbpedia.org/ontology/> 
+
+PREFIX yago: <http://dbpedia.org/class/yago/> 
+
+SELECT * 
+
+WHERE { 
+
+?Vehicle rdf:type dbpedia-owl:Automobile . 
+
+?Vehicle dbpedia-owl:layout dbpedia:Four-wheel_drive . 
+
+?Vehicle dbpedia-owl:assembly ?place . 
+
+FILTER regex(str(?place), "Germany") 
+
+} 
+
+## Query 5
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+
+PREFIX dbpedia: <http://dbpedia.org/resource/> 
+
+PREFIX dbpedia-owl: <http://dbpedia.org/ontology/> 
+
+PREFIX yago: <http://dbpedia.org/class/yago/> 
+
+SELECT * 
+
+WHERE { 
+
+?Vehicle rdf:type dbpedia-owl:Automobile . 
+
+?Vehicle dbpedia-owl:layout dbpedia:Four-wheel_drive . 
+
+?Vehicle dbpedia-owl:assembly ?place . 
+
+?place rdf:type yago:WikicatCountriesInEurope . 
+
+FILTER regex(str(?place), "Germany") 
+
+} 
+
+## Query 6
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+
+PREFIX dbpedia: <http://dbpedia.org/resource/> 
+
+PREFIX dbpedia-owl: <http://dbpedia.org/ontology/> 
+
+PREFIX yago: <http://dbpedia.org/class/yago/> 
+
+SELECT * 
+
+WHERE { 
+
+?Vehicle rdf:type dbpedia-owl:Automobile . 
+
+?Vehicle dbpedia-owl:assembly ?place . 
+
+?place rdf:type yago:WikicatCountriesInEurope . 
+
+FILTER regex(str(?place), "Germany") 
+
+} 
+
+## Query 7
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+
+PREFIX dbpedia: <http://dbpedia.org/resource/> 
+
+PREFIX dbpedia-owl: <http://dbpedia.org/ontology/> 
+
+PREFIX yago: <http://dbpedia.org/class/yago/> 
+
+PREFIX foaf: <http://xmlns.com/foaf/0.1/> 
+
+SELECT * 
+
+WHERE { 
+
+?Vehicle rdf:type dbpedia-owl:Automobile . 
+
+?Vehicle dbpedia-owl:layout dbpedia:Four-wheel_drive . 
+
+?Vehicle dbpedia-owl:assembly ?place . 
+
+?place rdf:type yago:WikicatCountriesInEurope . 
+
+?Vehicle foaf:name ?name . 
+
+}
+
+## Query 8
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+
+PREFIX dbpedia: <http://dbpedia.org/resource/> 
+
+PREFIX dbpedia-owl: <http://dbpedia.org/ontology/> 
+
+PREFIX yago: <http://dbpedia.org/class/yago/> 
+
+PREFIX foaf: <http://xmlns.com/foaf/0.1/> 
+
+SELECT * 
+
+WHERE { 
+
+?Vehicle rdf:type dbpedia-owl:Automobile . 
+
+?Vehicle dbpedia-owl:layout dbpedia:Four-wheel_drive . 
+
+?Vehicle foaf:name ?name . 
+
+} 
+
+## Query 9
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+
+PREFIX dbpedia: <http://dbpedia.org/resource/> 
+
+PREFIX dbpedia-owl: <http://dbpedia.org/ontology/> 
+
+PREFIX yago: <http://dbpedia.org/class/yago/> 
+
+PREFIX foaf: <http://xmlns.com/foaf/0.1/> 
+
+SELECT * 
+
+WHERE { 
+
+?Vehicle rdf:type dbpedia-owl:Automobile . 
+
+?Vehicle dbpedia-owl:layout dbpedia:Four-wheel_drive . 
+
+?Vehicle dbpedia-owl:assembly ?place . 
+
+?place rdf:type yago:WikicatCountriesInEurope . 
+
+?Vehicle foaf:name ?name . 
+
+FILTER regex(str(?name), "Benz")  
+
+} 
+
+## Query 10
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+
+PREFIX dbpedia: <http://dbpedia.org/resource/> 
+
+PREFIX dbpedia-owl: <http://dbpedia.org/ontology/> 
+
+PREFIX yago: <http://dbpedia.org/class/yago/> 
+
+PREFIX foaf: <http://xmlns.com/foaf/0.1/> 
+
+SELECT ?name 
+
+WHERE { 
+
+?Vehicle rdf:type dbpedia-owl:Automobile . 
+
+?Vehicle foaf:name ?name . 
+
+FILTER regex(str(?name), "Benz")  
+
+} 
+
+## Query 11
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>  
+
+PREFIX dbpedia: <http://dbpedia.org/resource/>  
+
+PREFIX dbpedia-owl: <http://dbpedia.org/ontology/>  
+
+PREFIX yago: <http://dbpedia.org/class/yago/>  
+
+SELECT ?manufacturer, count(?manufacturer) as ?count 
+
+WHERE {  
+
+?Vehicle rdf:type dbpedia-owl:Automobile .  
+
+?Vehicle dbpedia-owl:manufacturer ?manufacturer .  
+
+} GROUP BY ?manufacturer 
+
+having (count(?manufacturer) < 2 ) 
